@@ -1,10 +1,201 @@
+
+<!DOCTYPE HTML>
+
+
+<html>
+<!--<script src="{{url_for('static', filename='main.js')}}"></script>-->
+<!--<script src="{{url_for('static', filename='main.js')}}"></script>-->
+   <head>
+
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+
+      <title>Dissertation Project</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link rel="stylesheet" href="static/styles/main.css" />
+<!--            <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+<!--      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">-->
+
+
+
+
+   </head>
+   <body class="">
+
+<!--      <img src="{{url_for('static', filename='images/bg01.jpg')}}" alt="Description for image" width="250" height="250">-->
+
+
+      <!-- Header -->
+         <header id="">
+
+
+         </header>
+
+
+
+<!--   <table>          &lt;!&ndash; create an table object &ndash;&gt;-->
+<!--     <tr>           &lt;!&ndash; "tr" represents a row &ndash;&gt;-->
+<!--       <th>User Names</th> &lt;!&ndash; use "th" to indicate header row &ndash;&gt;-->
+
+<!--       <th>User Tweets</th>-->
+<!--       <th>Number of Tweets</th>-->
+<!--     </tr>-->
+<!--      <tr>-->
+<!--         <th>TEst user1</th>-->
+<!--      <th>TEst user1</th>-->
+<!--      </tr>-->
+<!--&lt;!&ndash;     <tr>           &lt;!&ndash; once again use tr for another row &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;       <td>Mary</td>   &lt;!&ndash; use "td" henceforth for normal rows &ndash;&gt;&ndash;&gt;-->
+<!--       <td>12/13/1994</td>-->
+<!--       <td>130</td>-->
+<!--     </tr>-->
+<!--   </table>-->
+
+
+
+<!--<div class="card">-->
+<!--  <img src="static/images/img.jpg" alt="Avatar" style="width:50%">-->
+<!--  <div class="container">-->
+<!--    <h4><b>{{name}}</b></h4>-->
+<!--    <p>Tweets</p>-->
+<!--     <form action="{{url_for('show_tweets')}}" method="post" id="signup-form" >-->
+<!--        <input type  = "hidden" value = {{name}} name = "u_name"/>-->
+<!--            <input type="submit" value="View" />-->
+<!--         </form>-->
+<!--  </div>-->
+<!--   <hr>-->
+<!--</div>-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Keyword Entered</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding:  10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #0c1e30
+}
+
+</style>
+    <h2>Results of Searched Keyword </h2>
 </head>
 <body>
-<h1>Thank You</h1>
+
+<!--&lt;!&ndash;<h2>Responsive Column Cards</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>Resize the browser window to see the effect.</p>&ndash;&gt; <br><br><br><br><br><br>-->
+
+<div class="row">
+
+    {% for name in names %}
+  <div class="column">
+    <div class="card">
+      <img src="static/images/img.jpg" alt="Avatar" style="width:50%">
+
+
+      <h3>{{name}}</h3>
+      <p><b></b></p>
+         <form align="center" action="{{url_for('show_tweets')}}" method="post" id="" >
+        <input type  = "hidden" value = {{name}} name = "u_name"/>
+            <input type="submit" value="View"/>
+         </form>
+
+        <p>{{tweet_no[name]}}</p>
+
+    </div>
+
+  </div>
+    {% endfor %}
+  </div>
+
 </body>
+</html>
+
+
+
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>User Names</th>-->
+<!--    <th>User Tweets</th>-->
+<!--    <th>Number of tweets</th>-->
+<!--  </tr>-->
+<!--   {% for name in names %}-->
+<!--  <tr>-->
+<!--    <td>{{name}}</td>-->
+
+
+<!--     {% for tweet in names[name] %}-->
+<!--&lt;!&ndash;     <div id="overflowTest">{{tweet}}</div>&ndash;&gt;-->
+<!--    <td>{{tweet}}</td>-->
+<!--{% endfor %}-->
+<!--    <td>10</td>-->
+<!--     {% endfor %}-->
+<!--  </tr>-->
+
+
+
+
+<!--</table>-->
+
+<!--         <form action="{{url_for('home')}}" method="post" id="signup-form" >-->
+<!--            <input type="text" name="name" id="email" placeholder="Enter Keyword" />-->
+<!--            <input type="submit" value="Sumbit" />-->
+<!--         </form>-->
+
+      <!-- Footer -->
+<!--         <footer id="footer">-->
+<!--            <ul class="icons">-->
+<!--               <li><a href="#" class="icon brands fa-twitter"><span class="label"></span></a></li>-->
+<!--               <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>-->
+<!--               <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>-->
+<!--               <li><i class="fa fa-database"></i></li>-->
+<!--            </ul>-->
+<!--            <ul class="copyright">-->
+<!--               <li>&copy; Aditya</li><li>2020H1120017U</a></li>-->
+<!--            </ul>-->
+<!--         </footer>-->
+
+      <!-- Scripts -->
+         <script src="static/main.js"></script>
+
+   </body>
 </html>

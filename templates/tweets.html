@@ -30,27 +30,24 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1>Dissertation Project</h1>
-				<p>Identification/Generation of lead from User Data</a>.</p>
+				<h1>{{tw_id}} Tweets</h1>
+				<p>Below are the tweets of user {{tw_id}}.</a>.</p>
 			</header>
 
+{% for tweet in tweets %}
+{% if tw_id == tweet %}
+{% for twt in tweets[tweet] %}
+<p>{{twt}}</p>
 
-			<form action="{{url_for('submit')}}" method="post" id="signup-form" >
-				<input type="text" name="name" id="email" placeholder="Enter Keyword" />
-				<input type="submit" value="Sumbit" />
-			</form>
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+
 
 		<!-- Footer -->
 			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label"></span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><i class="fa fa-database"></i></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Aditya</li><li>2020H1120017U</a></li>
-				</ul>
+
 			</footer>
 
 		<!-- Scripts -->
