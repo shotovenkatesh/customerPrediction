@@ -1,11 +1,11 @@
 
 <!DOCTYPE HTML>
-<script src="{{url_for('static', filename='main.js')}}"></script>
+
+
 
 
 <html>
-<!--<script src="{{url_for('static', filename='main.js')}}"></script>-->
-<!--<script src="{{url_for('static', filename='main.js')}}"></script>-->
+
 	<head>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
@@ -14,34 +14,50 @@
 		<title>Dissertation Project</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="static/styles/main.css" />
+
 <!--				<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">-->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <!--		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">-->
 
 
+<style>
+.outer {
+  width:700px;
+  border:1px solid #000;
+}
 
+.inner{
+  background-color:green;
+  border:5px solid #000;
+  margin:1px;
+  padding:1px
+}
 
+</style>
+
+<link rel="stylesheet" href="static/styles/main.css" />
 	</head>
-	<body class="is-preload">
 
-<!--		<img src="{{url_for('static', filename='images/bg01.jpg')}}" alt="Description for image" width="250" height="250">-->
+	<body class="">
 
-
-		<!-- Header -->
-			<header id="header">
+			<header id="">
 				<h1>{{tw_id}} Tweets</h1>
 				{% for score in scores %}
-				{% if tw_id == score %}
-				<h2>Score : {{scores[tw_id]}}</h2>
-				<h3>Final Statement: {{statement[tw_id]}}</h3>
+	  {% if tw_id == score %}
+					<div class="outer">
+  <div class="inner">
+	  <h2>Score : {{scores[tw_id]}} </h2>
+	  <h3>Final Statement: {{statement[tw_id]}}</h3>
+  </div>
+</div>
 				{% endif %}
 				{% endfor %}
 
 
-<p>Below are the tweets of user {{tw_id}}.</p>
-			</header>
 
+			</header>
+			<br>
+<h2>Below are the tweets of user {{tw_id}}.</h2>
 {% for tweet in tweets %}
 {% if tw_id == tweet %}
 {% for twt in tweets[tweet] %}
@@ -50,13 +66,7 @@
 {% endfor %}
 {% endif %}
 {% endfor %}
-
-
-
 		<!-- Footer -->
-			<footer id="footer">
-
-			</footer>
 
 		<!-- Scripts -->
 			<script src="static/main.js"></script>

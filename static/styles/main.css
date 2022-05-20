@@ -29,7 +29,14 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1; }
+div#loading {
+    width: 35px;
+    height: 35px;
+    display: none;
+    background: url(static/images/img.jpg) no-repeat;
 
+    cursor: wait;
+    }
 ol, ul {
   list-style: none; }
 
@@ -885,3 +892,29 @@ button,
       left: auto;
       margin: 1em 0 0 0;
       position: relative; } }
+#container
+  width: 100%
+  height: 100%
+  background: #7952B3
+  /* --- FLEX --- */
+  display: flex
+  justify-content: center
+  align-items: center
+
+.box
+  width: 200px
+  height: 200px
+  font-size: 20px
+  background: #3F51B5
+  color: #fff
+  text-align: center
+  box-shadow: 0px 2px 5px #666
+  border-radius: 3px
+  display: inherit
+  justify-content: inherit
+  align-items: inherit
+  transition: all 0.5s ease
+  &:hover
+    box-shadow: 0px 5px 20px #333
+    cursor: pointer
+    transform: scale(1.5)
