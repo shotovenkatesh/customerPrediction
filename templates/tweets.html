@@ -31,7 +31,15 @@
 		<!-- Header -->
 			<header id="header">
 				<h1>{{tw_id}} Tweets</h1>
-				<p>Below are the tweets of user {{tw_id}}.</a>.</p>
+				{% for score in scores %}
+				{% if tw_id == score %}
+				<h2>Score : {{scores[tw_id]}}</h2>
+				<h3>Final Statement: {{statement[tw_id]}}</h3>
+				{% endif %}
+				{% endfor %}
+
+
+<p>Below are the tweets of user {{tw_id}}.</p>
 			</header>
 
 {% for tweet in tweets %}

@@ -3,7 +3,12 @@
    html5up.net | @ajlkn
    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
+//<script type="text/javascript">// <![CDATA[
+//        function loading(){
+//            $("#loading").show();
+//            $("#content").hide();
+//        }
+//// ]]></script>
 (function() {
 
    "use strict";
