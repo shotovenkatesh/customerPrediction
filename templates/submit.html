@@ -144,6 +144,23 @@ html, body {
   margin: 1.5rem;
 }
 
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 35%;
+  flex: display;
+  margin: 30px;
+  alignItems: center;
+<!--  padding:  10px;-->
+
+}
+
+.card {
+  margin-left: 70px;
+<!--  width: 0px;-->
+<!--  padding:50px;-->
+}
+
 .card h1 {
   text-align: center;
 }
@@ -491,20 +508,21 @@ html, body {
       </div>
       <div class="more-info">
         <h1>{{name}}</h1>
+        <br>
         <div class="coords">
           <form align="center" action="{{url_for('show_tweets')}}" method="post" id="" >
         <input type  = "hidden" value = {{name}} name = "u_name"/>
-            <br>
             <button class="button-73" role="button" type="submit">View</button>
-
-
          </form>
         </div>
+        <h2 style="text-align: center;">Score : {{scores[name]}}</h2>
+
 <!--        <div class="coords">-->
 <!--          <span>Position/Role</span>-->
 <!--          <span>City, Country</span>-->
 <!--        </div>-->
         <div class="stats">
+          <br>
           <div>
             <div class="title">Total tweets</div>
             <i class="fa fa-trophy"></i>

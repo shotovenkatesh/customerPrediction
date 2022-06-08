@@ -6,6 +6,7 @@ from functools import reduce
 from monkeylearn import MonkeyLearn
 import random
 
+
 app = Flask(__name__)
 user_keyword = ""
 users_tweet_count = {}
@@ -77,7 +78,7 @@ def submit():
             for indx in lettersIndexes:
                 max_users_tweets[dup].append(tweets[indx])
 
-        ml = MonkeyLearn('e9c729d9b321dbb1c9fdbc3a179651eac63a1919')
+        ml = MonkeyLearn('1fe6a68502d14019a4de92f2df47b94e883bdddd')
         # def sentiment_classifer(*args):
         #     for result in args:
         #         sentiment = result["classifications"][0]["tag_name"]
@@ -134,7 +135,7 @@ def submit():
             elif final_score == 0:
                 showdown = "50%"
             else:
-                showdown = f"{final_score}%"
+                showdown = "{:.2f}".format(final_score)
             # print(showdown)
             user_scores[user_name] = showdown
 
@@ -195,7 +196,7 @@ def submit():
 
 
 
-        return render_template("submit.html", names=max_users_tweets, tweet_no=users_tweet_count,sentiment = user_with_sentiment_count)
+        return render_template("submit.html", names=max_users_tweets, tweet_no=users_tweet_count,sentiment = user_with_sentiment_count,scores = user_scores)
     # return render_template("submit.html")
 
 
